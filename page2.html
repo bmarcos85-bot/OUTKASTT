@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Choose</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #111;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+    }
+
+    h1 {
+      margin-bottom: 40px;
+    }
+
+    .container {
+      display: flex;
+      gap: 40px;
+    }
+
+    .option {
+      text-align: center;
+      cursor: pointer;
+      text-decoration: none;
+      color: white;
+    }
+
+    .option img {
+      width: 200px;
+      height: auto;
+      border: 3px solid white;
+      transition: 0.3s;
+    }
+
+    .option img:hover {
+      transform: scale(1.05);
+    }
+
+    .option p {
+      margin-top: 10px;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Choose Your Path</h1>
+
+  <div class="container">
+    
+    <!-- SONG PAGE -->
+    <a href="song.html" class="option">
+      <img src="song.jpg" alt="Song">
+      <p>Songs</p>
+    </a>
+
+    <!-- CULTURE PAGE -->
+    <a href="culture.html" class="option">
+      <img src="culture.jpg" alt="Culture">
+      <p>Culture</p>
+    </a>
+
+  </div>
+
+</body>
+</html>
