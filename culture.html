@@ -1,1 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>culture</title>
+  <style>
+    body {
+      margin: 0;
+      background: white;
+      font-family: "Arial", sans-serif;
+      overflow: hidden;
+      height: 100vh;
+      position: relative;
+      cursor: default;
+    }
 
+    .title {
+      width: 100%;
+      text-align: center;
+      font-size: 7rem;
+      font-weight: bold;
+      text-transform: lowercase;
+      letter-spacing: 18px;
+      color: black;
+      margin-top: 20px;
+      position: relative;
+      user-select: none;
+      text-shadow:
+        2px 0 red,
+        -2px 0 cyan,
+        0 2px #ddd;
+      animation: glitch 1.8s infinite steps(2);
+    }
+
+    @keyframes glitch {
+      0% {
+        transform: translate(0, 0);
+      }
+      20% {
+        transform: translate(-2px, 1px);
+      }
+      40% {
+        transform: translate(2px, -1px);
+      }
+      60% {
+        transform: translate(-1px, 2px);
+      }
+      80% {
+        transform: translate(1px, -2px);
+      }
+      100% {
+        transform: translate(0, 0);
+      }
+    }
+
+    .popup {
+      position: absolute;
+      width: 260px;
+      background: #f7f7f7;
+      border: 2px solid black;
+      box-shadow: 6px 6px 0 #bfbfbf;
+    }
+
+    .popup-header {
+      background: linear-gradient(to right, #dcdcdc, #f2f2f2);
+      border-bottom: 2px solid black;
+      padding: 8px 10px;
+      font-size: 0.9rem;
+      font-weight: bold;
+      cursor: grab;
+      user-select: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .close-btn {
+      background: white;
+      border: 2px solid black;
+      width: 24px;
+      height: 24px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      line-height: 1;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .popup img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .popup1 {
+      top: 150px;
+      left: 50px;
+    }
+
+    .popup2 {
+      top: 210px;
+      left: 330px;
+    }
+
+    .popup3 {
+      top: 160px;
+      left: 630px;
+    }
+
+    .popup4 {
+      top: 330px;
+      left: 160px;
+    }
+
+    .popup5 {
+      top: 350px;
+      left: 520px;
+    }
+
+    .back {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      display: inline-block;
+      padding: 10px 14px;
+      background: white;
+      border: 2px solid black;
+      color: black;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    .back:hover,
+    .close-btn:hover {
+      background: #efefef;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="title">culture</div>
+
+  <!-- POPUP 1 -->
+  <div class="popup popup1">
+    <div class="popup-header">
+      <span>image 1</span>
+      <span class="close-btn" onclick="closePopup(this)">X</span>
+    </div>
+    <!-- PUT IMAGE 1 FILE NAME BELOW -->
+    <img src="image1.jpg" alt="Image 1">
+  </div>
+
+  <!-- POPUP 2 -->
+  <div class="popup popup2">
+    <div class="popup-header">
+      <span>image 2</span>
+      <span class="close-btn" onclick="closePopup(this)">X</span>
+    </div>
+    <!-- PUT IMAGE 2 FILE NAME BELOW -->
+    <img src="image2.jpg" alt="Image 2">
+  </div>
+
+  <!-- POPUP 3 -->
+  <div class="popup popup3">
+    <div class="popup-header">
+      <span>image 3</span>
+      <span class="close-btn" onclick="closePopup(this)">X</span>
+    </div>
+    <!-- PUT IMAGE 3 FILE NAME BELOW -->
+    <img src="image3.jpg" alt="Image 3">
+  </div>
+
+  <!-- POPUP 4 -->
+  <div class="popup popup4">
+    <div class="popup-header">
+      <span>image 4</span>
+      <span class="close-btn" onclick="closePopup(this)">X</span>
+    </div>
+    <!-- PUT IMAGE 4 FILE NAME BELOW -->
+    <img src="image4.jpg" alt="Image 4">
+  </div>
+
+  <!-- POPUP 5 -->
+  <div class="popup popup5">
+    <div class="popup-header">
+      <span>image 5</span>
+      <span class="close-btn" onclick="closePopup(this)">X</span>
+    </div>
+    <!-- PUT IMAGE 5 FILE NAME BELOW -->
+    <img src="image5.jpg" alt="Image 5">
+  </div>
+
+  <a href="page2.html" class="back">← back</a>
+
+  <script>
+    const popups = document.querySelectorAll(".popup");
+
+    popups.forEach((popup) => {
+      const header = popup.querySelector(".popup-header");
+      let isDragging = false;
+      let offsetX = 0;
+      let offsetY = 0;
+
+      header.addEventListener("mousedown", (e) => {
+        if (e.target.classList.contains("close-btn")) return;
+
+        isDragging = true;
+        offsetX = e.clientX - popup.offsetLeft;
+        offsetY = e.clientY - popup.offsetTop;
+        popup.style.zIndex = Date.now();
+        header.style.cursor = "grabbing";
+      });
+
+      document.addEventListener("mousemove", (e) => {
+        if (!isDragging) return;
+
+        popup.style.left = (e.clientX - offsetX) + "px";
+        popup.style.top = (e.clientY - offsetY) + "px";
+      });
+
+      document.addEventListener("mouseup", () => {
+        isDragging = false;
+        header.style.cursor = "grab";
+      });
+    });
+
+    function closePopup(button) {
+      const popup = button.closest(".popup");
+      popup.style.display = "none";
+    }
+  </script>
+
+</body>
+</html>
