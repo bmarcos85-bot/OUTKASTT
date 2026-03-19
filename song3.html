@@ -1,1 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SO FRESH, SO CLEAN</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #cfd8e3;
+      font-family: Arial, sans-serif;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
 
+    h1 {
+      text-align: center;
+      margin-top: 40px;
+      margin-bottom: 20px;
+      font-size: 3rem;
+      color: #111;
+    }
+
+    .song-link {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .song-link a {
+      display: inline-block;
+      padding: 12px 20px;
+      background: white;
+      border: 2px solid #888;
+      color: #111;
+      text-decoration: none;
+      box-shadow: 3px 3px 0 #777;
+    }
+
+    .popup {
+      position: absolute;
+      width: 220px;
+      background: #f8f8f8;
+      border: 2px solid #888;
+      box-shadow: 4px 4px 0 #777;
+    }
+
+    .popup-header {
+      background: #dcdcdc;
+      border-bottom: 2px solid #888;
+      padding: 8px 10px;
+      font-size: 0.9rem;
+      font-weight: bold;
+      cursor: grab;
+      user-select: none;
+      text-align: center;
+    }
+
+    .popup img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .popup1 {
+      top: 180px;
+      left: 80px;
+    }
+
+    .popup2 {
+      top: 220px;
+      left: 380px;
+    }
+
+    .popup3 {
+      top: 160px;
+      left: 680px;
+    }
+
+    .back {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      display: inline-block;
+      padding: 10px 14px;
+      background: white;
+      border: 1px solid #777;
+      color: #333;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>SO FRESH, SO CLEAN</h1>
+
+  <div class="song-link">
+    <!-- PUT YOUR SONG LINK HERE -->
+    <a href="https://www.youtube.com/watch?v=-JfEJq56IwI&list=RD-JfEJq56IwI&start_radio=1" target="_blank">Play SO FRESH, SO CLEAN</a>
+  </div>
+
+  <!-- IMAGE POPUP 1 -->
+  <div class="popup popup1">
+    <div class="popup-header">Image 1</div>
+    <img src="SFSC.jpg" alt="Image 1">
+  </div>
+
+  <!-- IMAGE POPUP 2 -->
+  <div class="popup popup2">
+    <div class="popup-header">Image 2</div>
+    <img src="SFSC2.jpeg" alt="Image 2">
+  </div>
+
+  <!-- IMAGE POPUP 3 -->
+  <div class="popup popup3">
+    <div class="popup-header">Image 3</div>
+    <img src="SFSC3.webp" alt="Image 3">
+  </div>
+
+  <a href="song.html" class="back">← back</a>
+
+  <script>
+    const popups = document.querySelectorAll(".popup");
+
+    popups.forEach((popup)
