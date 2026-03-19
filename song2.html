@@ -1,1 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rosa Parks</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #cfd8e3;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+      height: 100vh;
+      position: relative;
+    }
 
+    h1 {
+      text-align: center;
+      margin-top: 40px;
+      color: #111;
+      font-size: 3rem;
+    }
+
+    .song-link {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .song-link a {
+      text-decoration: none;
+      color: #111;
+      background: white;
+      padding: 12px 20px;
+      border: 2px solid #888;
+      display: inline-block;
+    }
+
+    .popup {
+      position: absolute;
+      width: 220px;
+      background: #f8f8f8;
+      border: 2px solid #888;
+      box-shadow: 4px 4px 0 #777;
+      cursor: move;
+    }
+
+    .popup-header {
+      background: #dcdcdc;
+      padding: 8px;
+      font-size: 0.9rem;
+      font-weight: bold;
+      border-bottom: 2px solid #888;
+      text-align: center;
+    }
+
+    .popup img {
+      width: 100%;
+      display: block;
+      height: auto;
+    }
+
+    .popup-1 {
+      top: 180px;
+      left: 80px;
+    }
+
+    .popup-2 {
+      top: 220px;
+      left: 380px;
+    }
+
+    .popup-3 {
+      top: 160px;
+      left: 680px;
+    }
+
+    .back {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      color: #333;
+      text-decoration: none;
+      background: white;
+      padding: 10px 14px;
+      border: 1px solid #777;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Rosa Parks</h1>
+
+  <div class="song-link">
+    <!-- PUT YOUR SONG LINK BELOW -->
+    <a href="https://www.youtube.com/watch?v=drsQLEU0N1Y&list=RDdrsQLEU0N1Y&start_radio=1" target="_blank">Play Rosa Parks</a>
+  </div>
+
+  <!-- POPUP 1 -->
+  <div class="popup popup-1">
+    <div class="popup-header">Image 1</div>
+    <img src="rosaparks.jpg.webp" alt="Image 1">
+  </div>
+
+  <!-- POPUP 2 -->
+  <div class="popup popup-2">
+    <div class="popup-header">Image 2</div>
+    <img src="rosaparks2.jpeg" alt="Image 2">
+  </div>
+
+  <!-- POPUP 3 -->
+  <div class="popup popup-3">
+    <div class="popup-header">Image 3</div>
+    <img src="rosaparks3.jpg" alt="Image 3">
+  </div>
+
+  <a href="song.html" class="back">← back</a>
+
+  <script>
+    const popups = document.querySelectorAll(".popup");
+
+    popups.forEach((popup) => {
+      let isDragging = false;
+      let offsetX = 0;
