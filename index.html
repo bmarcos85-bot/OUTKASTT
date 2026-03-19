@@ -2,58 +2,161 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>OUTKAST</title>
   <style>
     body {
       margin: 0;
-      background-color: #e5e5e5;
+      min-height: 100vh;
+      font-family: Arial, sans-serif;
+      background-color: #d8d8d8;
+
+      /* PUT YOUR BACKGROUND IMAGE FILE NAME BELOW */
+      background-image: url("theboys.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      font-family: Arial, sans-serif;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.18);
+    }
+
+    .main {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 22px;
+      text-align: center;
     }
 
     h1 {
-      font-size: 4rem;
-      color: #111;
-      letter-spacing: 4px;
-      margin-bottom: 30px;
+      margin: 0;
+      font-size: 5rem;
+      letter-spacing: 8px;
+      color: white;
+      text-shadow: 3px 3px 0 black;
+      background: rgba(0, 0, 0, 0.35);
+      padding: 10px 24px;
+      border: 2px solid white;
     }
 
-    .popup {
-      background: white;
-      border: 2px solid #aaa;
-      padding: 10px;
-      width: 220px;
-      box-shadow: 4px 4px 0px #888;
-      text-align: center;
-      cursor: pointer;
+    .popup-link {
+      display: inline-block;
+      width: 280px;
       text-decoration: none;
       color: black;
+      background: #f2f2f2;
+      border: 2px solid black;
+      box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.45);
     }
 
-    .popup img {
+    .popup-top {
+      background: linear-gradient(to right, #dcdcdc, #f7f7f7);
+      border-bottom: 2px solid black;
+      padding: 8px 10px;
+      font-weight: bold;
+      font-size: 0.9rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .popup-buttons {
+      display: flex;
+      gap: 4px;
+    }
+
+    .popup-btn {
+      width: 18px;
+      height: 18px;
+      border: 1px solid black;
+      background: white;
+      display: inline-block;
+      text-align: center;
+      line-height: 18px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .popup-image {
+      display: block;
       width: 100%;
       height: auto;
     }
 
-    .popup p {
-      margin-top: 8px;
-      font-size: 0.9rem;
+    .popup-text {
+      padding: 8px;
+      font-size: 0.95rem;
+      border-top: 2px solid black;
+      background: white;
+    }
+
+    .blurb {
+      max-width: 700px;
+      background: white;
+      color: black;
+      border: 2px solid black;
+      padding: 18px 22px;
+      box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.35);
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 700px) {
+      h1 {
+        font-size: 3rem;
+        letter-spacing: 4px;
+      }
+
+      .popup-link {
+        width: 220px;
+      }
+
+      .blurb {
+        max-width: 85vw;
+        font-size: 0.95rem;
+      }
     }
   </style>
 </head>
 <body>
 
-  <h1>OUTKAST</h1>
+  <div class="overlay"></div>
 
-  <!-- CLICKABLE POPUP -->
-  <a href="page2.html" class="popup">
-    <img src="Outkast_desktop.png" alt="popup image">
-    <p>click me</p>
-  </a>
+  <div class="main">
+    <h1>OUTKAST</h1>
+
+    <a href="page2.html" class="popup-link">
+      <div class="popup-top">
+        <span>OUTKAST.exe</span>
+        <div class="popup-buttons">
+          <span class="popup-btn">_</span>
+          <span class="popup-btn">□</span>
+          <span class="popup-btn">X</span>
+        </div>
+      </div>
+
+      <!-- PUT YOUR POPUP IMAGE FILE NAME BELOW -->
+      <img src="Outkast_desktop.jpg" alt="Popup Image" class="popup-image">
+
+      <div class="popup-text">click me</div>
+    </a>
+
+    <div class="blurb">
+      Outkast, consisting of Andre 3000 and Big Boi coming together to make some of the most creative artistic rap groups of all time. If you want to learn more you are in the right place
+    </div>
+  </div>
 
 </body>
 </html>
