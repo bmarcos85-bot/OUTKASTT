@@ -1,1 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Best Songs</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #000;
+      color: white;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 80px;
+      text-align: center;
+    }
 
+    h1 {
+      font-size: 2rem;
+      max-width: 800px;
+      margin-bottom: 40px;
+    }
+
+    .songs {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .song {
+      background: #111;
+      padding: 15px 25px;
+      border: 1px solid #333;
+      text-decoration: none;
+      color: white;
+      transition: 0.3s;
+    }
+
+    .song:hover {
+      background: #222;
+      transform: scale(1.05);
+    }
+
+    a.back {
+      margin-top: 50px;
+      color: #aaa;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    a.back:hover {
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Best Songs By The Best Rap Group EVEAAA</h1>
+
+  <div class="songs">
+    
+    <a href="song1.html" class="song">Ms.Jackson</a>
+    <a href="song2.html" class="song">Rosa Parks</a>
+    <a href="song3.html" class="song">So Fresh, So Clean</a>
+
+  </div>
+
+  <a href="page2.html" class="back">← go back</a>
+
+</body>
+</html>
